@@ -1,6 +1,10 @@
-$text-color: #3D3D3D
+/* Use a variable */
+$text-color: #3D3D3D;
+
 body {
-    color: #3D3D3D; }
-  
-  p {
-    color: #3D3D3D; }
+    color: $text-color;
+}
+
+p {
+    color: $text-color;
+}
