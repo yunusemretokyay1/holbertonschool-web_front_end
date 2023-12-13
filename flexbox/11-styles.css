@@ -403,6 +403,7 @@
     padding: 7rem 0 0;
     z-index: 2;
    }
+   .section
   /* Section Latest news ============================= */
   .section-latest-news .row {
 	flex-direction: row-reverse;
