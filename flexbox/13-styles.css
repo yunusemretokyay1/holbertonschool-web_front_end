@@ -602,5 +602,5 @@
       display: inline;
     }
     .tag-list li::after{
-      content: empty;
+      content: ",";
     }
