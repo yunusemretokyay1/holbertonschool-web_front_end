@@ -661,17 +661,16 @@
       /* Basic form
         ============================= */
       
-      form {
+      .form {
         display: flex;
         flex-direction: column;
         padding: 1rem 0;
         margin: 0;
       }
-      .fieldset{
+      .fieldset {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        border: none;
+        border: 0;
         padding: 0 0 2rem;
-
       }
