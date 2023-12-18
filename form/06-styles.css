@@ -1,3 +1,4 @@
+
 /* SUMMARY
     1. GLOBAL
     2. LAYOUT
@@ -23,10 +24,11 @@
     --color-grey: #a0a0a0;
     --color-light-grey: #f3f3f3;
     --color-dark-grey: #353535;
-    --color-red:#cd3e65;
-    -color-green:#08805b;
-  
+    --color-red: #cd3e65;
+    --color-green: #08805b;
+
     --text-color: var(--color-black);
+
     --valid-color: var(--color-green);
     --error-color: var(--color-red);
   
@@ -152,6 +154,16 @@
     background: var(--button-hover-background);
     transition-duration: var(--transition-duration);
     transition-property: color, background-color;
+  }
+
+  .button-primary {
+    color: var(--color-white);
+    background: var(--color-primary);
+  }
+
+  .button-primary:hover {
+    color: var(--color-primary);
+    background: var(--color-white);
   }
   
   /* Helpers
@@ -653,73 +665,82 @@
 /*** FORM ***/
 /* Comment section
     ============================= */
-    .post-comments{
-        width: 80%;
-        margin: 10rem 0 0 auto;
-        padding-left: 7rem;
-    }
-    .post-comments .section-title {
-        font-variant: small-caps;
-      }
-    
-      /* Basic form
-        ============================= */
-      
-      form {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem 0;
-        margin: 0;
-      }
-      fieldset {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        border: 0;
-        padding: 0 0 2rem;
-      }
-      label{
-        cursor:pointer;
-        display: block;
-        white-space: nowrap;
-        font-size: 1.4rem;
-        padding: 0 0 .5rem;
-      }
-      input[type=text], input[type=email], textarea {
-        position: relative;
-        width: 100%;
-        padding: 1.2rem;
-        line-height: 1;
-        border: .1rem solid var(--color-black);
-        background-color: var(--color-white);
-        box-shadow: none;
-        outline: 0;
-      }
-    
-      input[type=text], input[type=email] {
-        padding-right: 3rem;
-      }
-    
-      input[type=text]:focus, input[type=email]:focus, textarea:focus {
-        border: .1rem solid var(--color-grey);
-        background-color: var(--color-light-grey);
-      }
-      ::placeholder {
-        font-style: italic;
-        font-size: var(--font-size-small);
-      }
-      /* Form group
+
+  .post-comments {
+    width: 80%;
+    margin: 10rem 0 0 auto;
+    padding-left: 7rem;
+  }
+
+  .post-comments .section-title {
+    font-variant: small-caps;
+  }
+
+  /* Basic form
+    ============================= */
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    margin: 0;
+  }
+
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 0;
+    padding: 0 0 2rem;
+  }
+
+  label {
+    cursor: pointer;
+    display: block;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    padding: 0 0 .5rem;
+  }
+
+  input[type=text], input[type=email], textarea {
+    position: relative;
+    width: 100%;
+    padding: 1.2rem;
+    line-height: 1;
+    border: .1rem solid var(--color-black);
+    background-color: var(--color-white);
+    box-shadow: none;
+    outline: 0;
+  }
+
+  input[type=text], input[type=email] {
+    padding-right: 3rem;
+  }
+
+  input[type=text]:focus, input[type=email]:focus, textarea:focus {
+    border: .1rem solid var(--color-grey);
+    background-color: var(--color-light-grey);
+  }
+
+  ::placeholder {
+    font-style: italic;
+    font-size: var(--font-size-small);
+  }
+
+/* Form group
 ============================= */
-.form-group{
+
+.form-group {
   padding: 1rem;
   margin: 0;
   background-color: var(--color-white);
-
 }
+
 .form-group:focus-within {
   background-color: var(--color-light-grey);
   transition: .3s;
 }
+
 /* Form field
 ============================= */
 .form-field-container {
@@ -748,8 +769,10 @@
   max-height: 20rem;
   margin: .4rem 0 0;
 }
+
 /* Form error handling
 ============================= */
+
 /* The following code is used to place the icon in the after pseudo element. Because after and before are not possible in an input, we need to use a span that will be positioned on the right of our input. */
 
 input:not(:placeholder-shown) ~ .form-field-icon::after {
