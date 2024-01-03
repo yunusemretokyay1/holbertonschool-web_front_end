@@ -498,6 +498,10 @@
     justify-content: center;
     min-height: 35vh;
   }
+  .article-page .section-hero {
+    margin-top: -8.5rem;
+    padding-top: 5rem;
+  }
   /* Section Latest news
       ============================= */
   
