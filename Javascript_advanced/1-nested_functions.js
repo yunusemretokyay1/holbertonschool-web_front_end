@@ -11,5 +11,4 @@ function outer() {
     inception();
   }
   inner();
-}
 outer();
