@@ -1,7 +1,13 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8"/>
-        <title>Task 8</title>
+        <title>Task 9</title>
+        <style>
+            .loading {
+                opacity: 0.2;
+            }
+        </style>
+
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script type="application/javascript">
 
@@ -38,6 +44,7 @@
             }
 
             function queryWikipedia (search, offset = 0) {
+                displayLoading(true);
                 const data = {
                     action: 'query',
                     list: 'search',
@@ -66,13 +73,23 @@
                                 addNewArticle(article.pageid, article.title, article.snippet);
                             }
 
-                            console.log(result);
+                            displayLoading(false);
                         },
                         error: function () {
                             console.log("error");
                         }
                     }
                 );
+            }
+
+            function displayLoading(loading) {
+                if (loading) {
+                    $('#results').wrap(
+                        $('<div class="loading"></div>')
+                    );
+                } else {
+                    $('#results').unwrap();
+                }
             }
 
             function buildPagination(numberOfItems, itemsPerPage, currentOffset) {
