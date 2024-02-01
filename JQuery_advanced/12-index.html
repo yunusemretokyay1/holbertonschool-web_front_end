@@ -1,17 +1,43 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8"/>
-        <title>Task 11</title>
+        <title>Task 10</title>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script type="application/javascript">
 
-            function addPostRow (data) {
+function addPostRow (data) {
                 // form is added at the start of the body in function 'buildForm', 2 functions down
                 $('form').after(
-                    $('<p><span>Post created with id ' + data.id + ', title: ' + data.title + ', author: ' + data.author + '</span></p>')
+                    $('<p id="row-' + data.id + '">').append(
+                        $('<span>(delete)</span>').click(
+                            function () {
+                                deletePost(data.id);
+                            }
+                        )
+                    ).append(
+                        '<span>Post created with id ' + data.id
+                            + ', title: '
+                            + data.title + ', author: '
+                            + data.author + '</span>'
+                    )
                 );
             }
+            function deletePost(id) {
+                $.ajax(
+                    'http://localhost:3000/posts/' + id,
+                    {
+                        type: "DELETE",
+                        success: function (data, textStatus, jqXHR) {
+                            $('#row-' + id).remove();
+                        },
+                        error: function (xhr, statusText, error) {
+                            alert('Post was not deleted');
+                        }
+                    }
+                )
+            }
+
 
             function listPosts () {
                 $.ajax(
@@ -31,7 +57,6 @@
                     }
                 );
             }
-
             function buildForm () {
                 $('body').append(
                     $('<form></form>').append(
@@ -87,6 +112,8 @@
                     listPosts();
                 }
             );
+
+            $(document).ready(listPosts);
 
         </script>
     </head>
